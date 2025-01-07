@@ -8,7 +8,7 @@ public class Daily_Temperature {
 		Temperature(arr);
 	}
 	
-	private static void Temperature(int[] arr) {
+	private static int[] Temperature(int[] arr) {
 		Stack<Integer> st = new Stack<>();
 		int[] ans = new int[arr.length];
 		
@@ -24,9 +24,7 @@ public class Daily_Temperature {
 			arr[st.pop()] = 0;
 		}
 		
-		for(int i=0; i<ans.length; i++) {
-			System.out.print(ans[i] + " ");
-		}
+		return ans;
 	}
 
 }

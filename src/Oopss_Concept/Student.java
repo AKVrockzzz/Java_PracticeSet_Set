@@ -1,51 +1,25 @@
 package Oopss_Concept;
 
 public class Student {
-	private String name = "kaju" ;
-	private int age = 8;
+	String name = "Kaju";
+	int age = 22;
 	
-	public Student () {
+	public Student(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	@Override
+	public String toString() {
+		return name + " " + age;
+	}
+	
+	
+	public static void main(String[] args) {
+		Student s = new Student("Kaju", 22);
+		Student s1 = new Student("Ankit", 23);
 		
+		System.out.println(s);
+		System.out.println(s1);
 	}
-	
-	public Student (String name, int age) {
-		this.name = name;
-		this.age = age;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) throws Exception{
-		try {
-		if(age < 0) {
-			throw new Exception ("age can not be -ve");
-			
-		}
-		this.age = age;
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			System.out.println("I am finally block");
-		}
-	}
-	
-//	public void setAge(int age) throws Exception{
-//		if(age < 0) {
-//			throw new Exception ("age can not be -ve");
-//			
-//		}
-//		this.age = age;
-//	}
 }

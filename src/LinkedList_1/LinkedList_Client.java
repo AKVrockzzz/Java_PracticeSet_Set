@@ -1,6 +1,6 @@
-package Linked_List_DSA;
+package LinkedList_1;
 
-public class Middle_Of_The_List {
+public class LinkedList_Client {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

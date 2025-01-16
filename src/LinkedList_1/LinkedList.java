@@ -38,6 +38,19 @@ public class LinkedList {
 		}
 	}
 	
+	public void AddAtIndex(int item, int k) throws Exception{
+		if(k == 0) AddFirst(item);
+		else if(k == size) AddLast(item);
+		else {
+			Node nn = new Node();
+			nn.val = item;
+			Node prev = GetNode(k - 1);
+			nn.next = prev.next;
+			prev.next = nn;
+			size++;
+		}
+	}
+	
 	
 	public Node GetNode(int k) throws Exception{
 		if(k < 0 || k >= size) throw new Exception("Bklol k tho shi daal de Budwak khen ka :-(");
@@ -64,6 +77,39 @@ public class LinkedList {
 	
 	public Node GetTail() {
 		return tail;
+	}
+	
+	
+	public int RemoveFirst() {
+		int val = head.val;
+		if(size == 1) {
+			head = null;
+			tail = null;
+		}
+		else {
+			Node temp = head;
+			head = head.next;
+			temp.next = null;
+		}
+		size--;
+		return val;
+	}
+	
+	public int RemoveLast() throws Exception{
+		if(size == 1) return RemoveFirst();
+		else {
+			int val = tail.val;
+			Node prev = GetNode(size - 2); 
+			tail = prev;
+			tail.next = null;
+			size--;
+			return val;
+		}
+		
+	}
+	
+	public int Size() {
+		return size;
 	}
 	
 	
